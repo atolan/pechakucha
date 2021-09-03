@@ -1,0 +1,7 @@
+- name: 必要な共通パッケージをインストールする
+  become: true
+  yum:
+    name:
+      - git
+      - python2-pip
+    state: present

@@ -1,0 +1,6 @@
+- name: php-gdをインストールする
+  become: yes
+  yum:
+    name: php-gd
+    enablerepo: amzn2extra-php7.3
+    state: present

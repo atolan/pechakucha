@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/comment.css">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/iziModal.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/iziModal.css" media="screen" />
+<title>ペチャ-クチャ</title>
+</head>
+<body>
+<header>
+  <p class="ttl"><a href="top.html"><span class="arrow header_arrow"></span>ペチャ-クチャ</a></p>
+</header>
+<div class="comment_area">
+	<div class="comment_box_you">
+        <div class="balloon_you">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            CSS
+        </div>
+    </div>
+	<div class="comment_box_you">
+        <div class="balloon_you">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            だけで吹き出しをつくる - 会話風
+        </div>
+	</div>
+    <div class="comment_box_you">
+        <div class="balloon_you_new">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            CSSだけで吹き出しをつくる - 会話風 <br>
+            左に画像
+        </div>
+	</div>
+	<div class="comment_box_i">
+        <div class="balloon_i">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            <a href="#" data-izimodal-open=".iziModal">
+            CSSだけで吹き出しをつくる - 会話風
+            <br>
+            右に画像
+            </a>
+        </div>
+	</div>
+	<div class="comment_box_i">
+        <div class="balloon_i_new">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            CSSだけで吹き出しをつくる - 会話風 <br>
+            右に画像
+        </div>
+    </div>
+	<div class="comment_box_i">
+        <div class="balloon_i_new">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            CSSだけで吹き出しをつくるCSSだけで吹き出しをつくるCSSだけで吹き出しをつくるCSSだけで吹き出しをつくるCSSだけで吹き出しをつくるCSSだけで吹き出しをつくるCSSだけで吹き出しをつくる <br>
+            右に画像
+        </div>
+    </div>
+	<div class="comment_box_i">
+        <div class="balloon_i_new">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+    </div>
+	<div class="comment_box_i">
+        <div class="balloon_i_file">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            <div class="file_img"><img src="images/img.jpg" alt=""></div>
+        </div>
+    </div>
+	<div class="comment_box_you">
+        <div class="balloon_you_file">
+            <div class="icon"><img src="images/1.jpg" alt=""></div>
+            <div class="file_img"><img src="images/img.jpg" alt=""></div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="btn_bottom_comment">
+        <a href="" class="btn">ペチャクチャ</a>
+        <a href="" class="btn">クチャ変更</a>
+        <p class="text_link"><a href="">MOVIE作成&nbsp;&rsaquo;</a></p>
+    </div>
+</footer>
+
+<div class="iziModal">
+    AAAAAAAAAAAAAAAAA
+    <ul class="btn_bottom_input">
+        <li id=5><a href="">そう</a></li>
+        <li id=4><a href="">なるほどね。</a></li>
+        <li id=3><a href=""><p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ。</p></a></li>
+    </ul>
+    <ul class="btn_bottom_input_fixed">
+        <li id=2><a href=""><img src="images/user.png" alt="">自分で入力する</a></li>
+        <li id=1><a href=""><img src="images/user.png" alt="">写真を投稿する</a></li>
+    </ul>
+</div>
+
+<!--<footer>
+<div class="btn_bottom_movie"> <a href=""><img src="images/user.png" alt="">SNSにシェア</a> <a href=""><img src="images/user.png" alt="">ライブラリに保存</a> </div>
+	</footer>-->
+</body>
+
+<script type="text/javascript">
+    $(function(){
+        $(".iziModal").iziModal({
+            width: '800px'});
+    })
+
+    $(function(){
+        $('#images li').click(function(){
+            var index = $(this).index() + 1;
+            alert('要素:' + index + '番目');
+        });
+    });
+</script>
+</html>

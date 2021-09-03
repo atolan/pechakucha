@@ -1,0 +1,2 @@
+[web]
+18.176.93.3:22 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=~/.ssh/pechakuca_web_demo.pem

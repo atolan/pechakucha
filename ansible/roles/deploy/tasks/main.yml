@@ -1,0 +1,68 @@
+- name: 開発者グループ、デプロイグループを追加する
+  become: true
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - developer
+    - deployer
+
+- name: デプロイ用ユーザーを追加する
+  become: true
+  user:
+    name: deployer
+    group: deployer
+    generate_ssh_key: yes
+    state: present
+
+- name: デプロイ用ユーザーにグループを追加する
+  become: true
+  user:
+    name: deployer
+    groups: developer,apache
+    append: yes
+
+- name: apacheにデプロイグループを追加する
+  become: true
+  user:
+    name: apache
+    groups: deployer
+    append: yes
+
+- name: デプロイ用ユーザーに接続するためのauthorized_keysを設定しておく
+  become: yes
+  shell: "mv ~deployer/.ssh/{id_rsa.pub,authorized_keys}"
+  args:
+    creates: "~deployer/.ssh/authorized_keys"
+
+- name: デプロイ用ユーザーの接続鍵を落としておく
+  become: yes
+  fetch:
+    src: "~deployer/.ssh/id_rsa"
+    # TODO: 接続環境に応じてファイル名を変更するようにする
+    dest: "~/.ssh/pechakucha_deployer.pem"
+    flat: yes
+
+- name: デプロイ先のフォルダを作成する
+  become: yes
+  file:
+    path: "/pechakucha"
+    state: directory
+    owner: deployer
+    group: deployer
+
+- name: ベーシック認証用のパスワード生成用ライブラリを追加する
+  become: yes
+  pip:
+    name: passlib
+    state: present
+
+- name: ベーシック認証用のパスワードファイルを作成する
+  become: yes
+  htpasswd:
+    path: /etc/httpd/conf/htpasswd
+    name: pechakucha
+    password: pechakucha
+    owner: root
+    group: apache
+    mode: 0640

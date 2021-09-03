@@ -1,0 +1,1648 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------
+　　共通設定
+--------------------------------------------------------*/
+body {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    font-family: "Hiragino Sans", Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", sans-serif;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    background-color: #474747;
+    background-image: url(/img/v2/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   -ms-overflow-style: none;    /* IE, Edge 対応 */
+   scrollbar-width: none;       /* Firefox 対応 */
+}
+body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}
+@media screen and (min-height: 1025px) {
+  body {
+    background-image: url(/img/v2/background2.png);
+  }
+}
+/* header */
+header {
+  background-color: #21335b;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 56px;
+  z-index: 20;
+  margin: 0 auto;
+}
+header img{
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+header span{
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.contents_area {
+  max-width: 420px;
+  height: 100%;
+}
+@media screen and (min-width: 421px) {
+  .contents_area {
+    max-width: 420px;
+    margin: auto;
+  }
+}
+.change_talk_header {
+  z-index:50;
+}
+.modal_header,
+.modal_movie_header,
+.modal_change_header,
+.modal_speaker_header,
+.modal_image_header,
+.modal_resize_header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  transform: translate3d(0, 0, 0);
+}
+.modal_header,
+.modal_change_header,
+.modal_speaker_header,
+.modal_image_header {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 30;
+}
+.modal_image_header {
+  top: 0px;
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.modal_change_header {
+  top: 100px;
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.image .modal_change_header{
+  top:165px;
+}
+
+.modal_change_header ul{
+  margin-top: 55px;
+}
+.modal_speaker_header {
+  top: 104px;
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+.modal_header{
+  top:100px;
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+@media screen and (min-width: 410px) {
+  .modal_header,
+  .modal_change_header,
+  .modal_speaker_header,
+  .modal_image_header {
+    background-size: cover;
+  }
+}
+.modal_header_bar {
+  height: 5px;
+  width: 54px;
+  border-radius: 4px;
+  background-color: #d8d8d8;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  text-decoration: none;
+}
+.modal_header_link {
+  font-weight: 600;
+  font-size: 30px;
+  color: #cbcbcb;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  text-decoration: none;
+}
+.modal_header_title,
+.modal_resize_title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #000000;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.modal_title_header {
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.template_list {
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+}
+.template_list::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}
+
+.template_box ul{
+  margin-top: 200px;
+}
+.template_box li{
+  overflow:hidden;
+  padding: 15px 22px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  border-style: solid;
+  border-width: 1px 0px;
+  border-color: #d8d8d8;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+}
+.template_box li + li {
+  border-top:none;
+}
+.template_checked {
+  margin-left: 4%;
+}
+.template_no_checked {
+  margin-left: 10%;
+}
+/* change_talk */
+.change_talk_box {
+  padding-top: 200px;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 128px;
+}
+
+.image .change_talk_box{
+  padding-top: 265px;
+}
+
+.change_talk_box ul{
+  margin-top: 55px;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+}
+.change_talk_box li + li {
+  border-top:none;
+}
+.change_talk_box::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}
+.change_talk_box_li {
+  height: 50px;
+  position: relative;
+  padding: 15px 22px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  border-style: solid;
+  border-width: 1px 0px;
+  border-color: #d8d8d8;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+}
+.talk_icon {
+  width: 40px;
+}
+.talk_icon_lock {
+  width: 40px;
+  padding-top: 3px;
+}
+
+.talk_data {
+  width: 100%;
+}
+.change_balloon_l,
+.change_balloon_r{
+  background-color: #eaeaea;
+  display: -webkit-flex;
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: flex-start; /*縦位置を上揃え*/
+  /*   align-items: center; */ /*縦位置を真ん中揃え*/
+}
+.change_balloon_r{
+  justify-content:flex-end;
+  padding-left: 45px;
+}
+.change_balloon_l{
+  padding-right: 45px;
+}
+.change_faceicon img{
+  width: 46px;
+  padding: 1px;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+}
+.change_balloon_r .change_faceicon{
+  margin-left:10px;
+}
+.change_balloon_l .change_faceicon{
+  margin-right:10px;
+}
+.change_balloon_r .change_faceicon{
+  order:2 !important;
+}
+.change_says {
+  font-weight: 500;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 5px 10px 5px 10px;
+  border-radius: 18px;
+  box-sizing: border-box;
+  margin: 0 !important;
+  line-height: 1.5;
+  /* align-items: center; */
+}
+.change_balloon_l .change_says{
+  background: #ffffff;
+}
+.change_balloon_r .change_says{
+  background: #ffffff;
+}
+.change_says p{
+  margin:8px 0 0 !important;
+}
+.change_says p:first-child{
+  margin-top:0 !important;
+}
+.change_balloon_l .change_says:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: -10px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/v2/talk/balloon-corner-white.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.change_balloon_r .change_says:before {
+  content: '';
+  position: absolute;
+  display: block;
+  right: -10px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/v2/talk/balloon-corner-green.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.footer_change_talk {
+  position: fixed;
+  bottom: 0;
+}
+.static_talk_box {
+  background-color: #ffffff;
+  width: 100%;
+  height: 56px;
+  max-width: 420px;
+  margin: 0px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  padding-left: 22px;
+}
+.footer_change_talk img {
+  padding-left: 30px;
+}
+.footer_change_talk p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.footer_comment {
+  width: 100%;
+  padding: 15px 15px 30px;
+  background-color: #f9f9f9;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  color: #a4a4a4;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+}
+/* checkbox */
+/* === ボタンを表示するエリア ============================== */
+.switchArea {
+  position       : relative;            /* 親要素が基点       */
+  margin         : auto 20px;                /* 中央寄せ           */
+  width          : 46px;               /* ボタンの横幅       */
+  background     : #bdbdbd;                /* デフォルト背景色   */
+  border-radius: 50%;
+}
+
+/* === チェックボックス ==================================== */
+.switchArea input[type="checkbox"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+
+/* === チェックボックスのラベル（標準） ==================== */
+.switchArea label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  height         : 28px;                /* ボタンの高さ       */
+  border         : 2px solid #f5f5f5;   /* 未選択タブのの枠線 */
+  border-radius  : 14px;                /* 角丸               */
+}
+
+/* === チェックボックスのラベル（ONのとき） ================ */
+.switchArea input[type="checkbox"]:checked +label {
+  border-color   : #21335b;             /* 選択タブの枠線     */
+  background-color: #21335b;
+}
+
+/* === 丸部分のSTYLE（標準） =============================== */
+.switchArea #swImg {
+  position       : absolute;            /* 親要素からの相対位置*/
+  width          : 20px;                /* 丸の横幅           */
+  height         : 20px;                /* 丸の高さ           */
+  background     : #f5f5f5;             /* カーソルタブの背景 */
+  top            : 4px;                 /* 親要素からの位置   */
+  left           : 4px;                 /* 親要素からの位置   */
+  border-radius  : 10px;                /* 角丸               */
+  transition     : .2s;                 /* 滑らか変化         */
+}
+
+/* === 丸部分のSTYLE（ONのとき） =========================== */
+.switchArea input[type="checkbox"]:checked ~ #swImg {
+  transform      : translateX(18px);    /* 丸も右へ移動       */
+  background     : #ffffff;             /* カーソルタブの背景 */
+}
+.fixed {
+  opacity: 0.5;
+}
+.talk_box {
+  width: 75%;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  position: absolute;
+}
+.talk_send {
+  font-size: 12px;
+  right: 0;
+  position: absolute;
+  margin-right: 15px;
+}
+/*--------------------------------------------------------
+　　TOP
+--------------------------------------------------------*/
+.top_area,
+.usage_area {
+  text-align: center;
+  max-width: 420px;
+  min-height: 100%;
+}
+.top_area {
+  background-color: #f4f4f4;
+}
+.usage_area {
+  background-color: #21335b;
+}
+.top_ttl {
+  margin-bottom: 10px;
+}
+.top_ttl img {
+  width: 100%;
+  margin: 0 auto;
+}
+.popular_header {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 80%;
+  height: 37px;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -0.68px;
+  color: #000000;
+  position: relative;
+}
+.popular_header a {
+  position: absolute;
+  left: 0;
+}
+.popular_box,
+.usage_box{
+  width: 90%;
+  padding: 10px 0px;
+  margin: 10px 5%;
+  background: #FFF;
+  border-radius: 10px;/*角の丸み*/
+}
+.popular_image,
+.usage_image {
+  border-radius: 10px;/*角の丸み*/
+  width: 90%;
+}
+.usage_image {
+  padding: 15px 0 15px 0;
+}
+.popular_image_fix {
+  height: 430px;
+  object-fit: cover;
+  object-position: top center;
+}
+.usage_title,
+.usage_content {
+  padding: 10px 30px;
+}
+.usage_title {
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -0.68px;
+  color: #21335b;
+}
+.usage_title1 {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.68px;
+  color: #21335b;
+}
+.usage_content {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.39px;
+  text-align: center;
+  color: #999999;
+}
+.usage_footer {
+  background-color: #21335b;
+}
+.top_footer {
+  background-color: #21335b;
+}
+.top_footer_logo {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  height: 151px;
+  width: 210px;
+}
+.top_footer_make {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 60%;
+}
+.top_twitter_area {
+  margin: 20px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+}
+.top_twitter_area a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  color: #4c9fec;
+}
+.top_footer_copy {
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 100px;
+}
+.top_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 5% auto;
+}
+.top_icon div.image {
+  display: block;
+  max-width: 30%;
+}
+@media screen and (max-width: 640px) {
+  .top_icon div:nth-child(2) {
+    max-width: 15%;
+  }
+}
+.top_icon img {
+  margin: 5px 5% 5px 5%;
+  width: 90%;
+  border-radius: 20px;
+}
+.top_icon img#allow {
+    padding-bottom: 7vh;
+    border-radius: 0px;
+}
+.top_icon p {
+    margin-top: 10px;
+    margin-left: 5%;
+    background-color: #232941;
+    width: 90%;
+    height: 40px;
+    color: #ffffff;
+    line-height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.top_icon a {
+  position: relative;
+  color: #989898;
+  display: block;
+}
+.top_icon a p {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  color: #989898;
+}
+@media screen and (max-width: 640px) {
+  .top_icon a p:nth-child(2) {
+    font-size: 80%;
+  }
+}
+/*--------------------------------------------------------
+　　ジャンルエリア
+--------------------------------------------------------*/
+/* ジャンルエリア大枠 */
+.genre_main {
+  position: absolute;
+  width: 100%;
+  max-width: 420px;
+  height: 72px;
+  margin-top: 54px;
+}
+.genre_area {
+  position: relative;
+  width: 100%;
+  height: 72px;
+  background-color: #ffffff;
+  color: #333333;
+  z-index: 10;
+}
+.theme {
+  position:absolute;
+  padding-top: 12px;
+  padding-left: 10%;
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.5;
+
+}
+.genre_name {
+  position:absolute;
+  padding-left: 8%;
+  padding-top: 27px;
+  font-size: 24px;
+  font-weight: 800;
+}
+.genre_change {
+  width: 64px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #21335b;
+  position:absolute;
+  margin-right: 7%;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  right: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+}
+.genre_change a,
+.mode_change a {
+  color: #ffffff;
+  text-decoration: none;
+}
+/*--------------------------------------------------------
+　　コメントエリア
+--------------------------------------------------------*/
+/* コメントエリア大枠 */
+.main {
+  overflow-y: auto;
+  height: 100vh;
+  background-color: #7d9fc8;
+}
+.main_contents {
+  -webkit-overflow-scrolling: auto;
+
+}
+.comment_area {
+  width: 100%;
+  max-width: 420px;
+  background-color: #7d9fc8;
+  padding: 150px 15px 76px;
+  box-sizing: border-box;
+  position: absolute;
+}
+/* モーダル用コメントエリア */
+.modal_comment_area {
+  display: flex;
+  height: 123px;
+  width: 100%;
+  position: fixed;
+  overflow-y: auto;
+  padding: 14px 15px 10px;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  z-index: 30;
+  transform: translate3d(0, 0, 0);
+  background-position: center 0px;
+  background-size: 100% auto;
+  background-color: #7d9fc8;
+  justify-content: center;
+}
+
+.image .modal_comment_area{
+  height: 185px;
+}
+
+.modal_comment_area .section02-part02-img02, .modal_comment_area .section02-part02-img01{
+  margin-top: 75px;
+}
+
+.modal_comment_area::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}
+.modal_speaker_area {
+  background-color: #7d9fc8;
+  height: 125px;
+  width: 100%;
+  position: fixed;
+  overflow-y: auto;
+  padding: 15px 15px 10px;
+  box-sizing: border-box;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+  z-index: 20;
+  transform: translate3d(0, 0, 0);
+  background-position: center 0px;
+  background-size: 100% auto;
+}
+
+.modal_speaker_area-blue {
+  background-color: #7d9fc8;
+  height: 122px;
+  width: 100%;
+  position: fixed;
+  overflow-y: auto;
+  padding: 10px 15px 10px;
+  box-sizing: border-box;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+  z-index: 20;
+  transform: translate3d(0, 0, 0);
+  background-position: center 0px;
+  background-size: 100% auto;
+}
+.balloon_l,
+.balloon_r{
+  display:flex;
+  padding: 8px 0;
+  justify-content: flex-start;
+  align-items: flex-start; /*縦位置を上揃え*/
+  /*   align-items: center; */ /*縦位置を真ん中揃え*/
+}
+.balloon_r{
+  margin-left: 45px;
+  justify-content:flex-end;
+}
+.balloon_l{
+  margin-right: 45px;
+}
+.faceicon img{
+  width: 40px;
+  border: 2px solid #ffffff;
+  padding: 1px;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+  box-shadow: 0 0 0 2px #0000ff;
+  -webkit-box-shadow: 0 0 0 2px #0000ff;
+  -moz-box-shadow: 0 0 0 2px #0000ff
+}
+.balloon_r .faceicon{
+  margin-left:10px;
+}
+.balloon_l .faceicon{
+  margin-right:10px;
+}
+.balloon_r .faceicon{
+  order:2 !important;
+}
+.says,
+.locked,
+.think {
+  font-weight: 500;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 5px 10px 5px 10px;
+  border-radius: 18px;
+  box-sizing:border-box;
+  margin:0 !important;
+  line-height:1.5;
+  /*   align-items: center; */
+}
+.locked {
+  padding: 5px 10px 10px 10px;
+}
+.think {
+  padding: 5px 15px 5px 15px;
+  align-items: center;
+}
+.think img{
+  padding-left: 3px;
+  width: 15%;
+}
+.balloon_l .says,
+.balloon_l .locked{
+  background: #ffffff;
+}
+.balloon_r .says,
+.balloon_r .locked {
+  background: #72de54;
+}
+.balloon_l .think,
+.balloon_r .think {
+  background: #000000;
+  color: #ffffff;
+}
+.says p
+.locked p {
+  margin:8px 0 0 !important;
+}
+.says p:first-child,
+.locked p:first-child {
+  margin-top:0 !important;
+}
+.says:before,
+.think:before,
+.locked:before {
+  position: absolute;
+}
+.file_img,
+.file_img_locked {
+  width: 70%;
+  position: relative;
+}
+.balloon_l .file_img,
+.balloon_l .file_img_locked {
+  margin-right: auto;
+}
+.balloon_r .file_img,
+.balloon_r .file_img_locked {
+  margin-left: auto;
+}
+.file_img img,
+.file_img_locked img {
+  width: 100%;
+  height: 100%;
+}
+.balloon_l .file_img:after,
+.balloon_l .file_img_locked:after {
+  content: '';
+  position: absolute;
+  display: block;
+  right: 5px;
+  bottom: -5px;
+  width: 13px;
+  height: 13px;
+  background-color: #ffffff;
+  background-image: url(/img/v2/talk/dot@3x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+  box-shadow: 0 0 0 2px #7d9fc8;
+  -webkit-box-shadow: 0 0 0 2px #7d9fc8;
+  -moz-box-shadow: 0 0 0 2px #7d9fc8;
+  border: 2px solid #ffffff;
+}
+.balloon_r .file_img:after,
+.balloon_r .file_img_locked:after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 5px;
+  bottom: -5px;
+  width: 13px;
+  height: 13px;
+  background-color: #ffffff;
+  background-image: url(/img/v2/talk/dot@3x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+  box-shadow: 0 0 0 2px #7d9fc8;
+  -webkit-box-shadow: 0 0 0 2px #7d9fc8;
+  -moz-box-shadow: 0 0 0 2px #7d9fc8;
+  border: 2px solid #ffffff;
+}
+
+.balloon_l .says:before,
+.balloon_l .locked:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: -10px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/v2/talk/balloon-corner-white.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.balloon_r .says:before,
+.balloon_r .locked:before {
+  content: '';
+  position: absolute;
+  display: block;
+  right: -10px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/v2/talk/balloon-corner-green.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.balloon_l .think:before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: -10px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/v2/talk/balloon-l-corner-think.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.balloon_r .think:before {
+  content: '';
+  position: absolute;
+  display: block;
+  right: -10px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/v2/talk/balloon-r-corner-think.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.balloon_l .says:after,
+.balloon_l .locked:after {
+  content: '';
+  position: absolute;
+  display: block;
+  right: 0px;
+  bottom: -10px;
+  width: 13px;
+  height: 13px;
+  background-color: #ffffff;
+  background-image: url(/img/v2/talk/dot@3x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+  box-shadow: 0 0 0 2px #7d9fc8;
+  -webkit-box-shadow: 0 0 0 2px #7d9fc8;
+  -moz-box-shadow: 0 0 0 2px #7d9fc8;
+  border: 2px solid #ffffff;
+}
+.balloon_r .says:after,
+.balloon_r .locked:after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0px;
+  bottom: -10px;
+  width: 13px;
+  height: 13px;
+  background-color: #ffffff;
+  background-image: url(/img/v2/talk/dot@3x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+  box-shadow: 0 0 0 2px #7d9fc8;
+  -webkit-box-shadow: 0 0 0 2px #7d9fc8;
+  -moz-box-shadow: 0 0 0 2px #7d9fc8;
+  border: 2px solid #ffffff;
+}
+.balloon_l .locked:after,
+.balloon_r .locked:after,
+.balloon_l .file_img_locked:after,
+.balloon_r .file_img_locked:after {
+  background-image: url(/img/v2/talk/locked2.png);
+  width: 30px;
+}
+/* トーク編集 */
+.change_talk img {
+  width: 40px;
+  padding: 1px;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+}
+
+/*--------------------------------------------------------
+　　ペチャクチャ変更
+--------------------------------------------------------*/
+.change_area,
+.image_area {
+  max-width: 420px;
+}
+.image_box {
+  background-color: #f5f5f5;
+  margin-top: 55px;
+}
+
+.change_box {
+  background-color: #f5f5f5;
+  margin-top: 145px;
+}
+
+.withgenre_main .change_box {
+  background-color: #f5f5f5;
+  margin-top: 230px;
+}
+
+.change_area ul,
+.image_area ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.change_area ul li {
+  width: 24%;
+  list-style-type: none;
+  line-height: 0;
+  position: relative;
+}
+.image_area ul li {
+  width: 33.33%;
+  list-style-type: none;
+  line-height: 0;
+}
+.change_area ul li a {
+  display: block;
+}
+.change_area ul li img {
+  margin: 20px;
+  width: 80%;
+  -moz-border-radius: 50px; /*for Firefox*/
+  -webkit-border-radius: 50px; /*for Safari and chrome*/
+  border-radius: 50px;
+}
+.image_area ul li img {
+  width: 100%;
+}
+.change_area ul li .check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.change_area ul li .check img {
+  width: 100%;
+  max-width: 34px;
+  height: auto;
+}
+.selected {
+  border: 2px solid #ffffff;
+  box-shadow: 10px 10px 10px 2px #0000ff;
+  -webkit-box-shadow: 0 0 0 2px #0000ff;
+  -moz-box-shadow: 0 0 0 2px #0000ff;
+  filter: brightness(70%);
+}
+/*---------------------------- footerボタンエリア ----------------------------*/
+/*--------------------------------------------------------
+　　ペチャクチャfooterボタン
+--------------------------------------------------------*/
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255,255,255,0);
+  width: 100%;
+  max-width: 420px;
+}
+footer_movie {
+    bottom: 0;
+    background-color: #f7f7f7;
+    width: 100%;
+    max-width: 420px;
+}
+.footer_area {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background:linear-gradient(180deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 30%,#fff 30%,#fff 100%);
+}
+.footer_left {
+  width: 33%;
+  margin-top: 41px;
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: -0.29px;
+  text-align: center;
+  color: #21335b;
+}
+.footer_left a {
+  text-decoration: none;
+  color: #21335b;
+}
+.footer_center {
+  width: 33%;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.29px;
+  text-align: center;
+  color: #999999;
+}
+.footer_center a {
+  text-decoration: none;
+  color: #999999;
+}
+.footer_center_area {
+  margin: 2px auto;
+  width: 102px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #21335b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fff;
+}
+.footer_center_area svg {
+  margin-top: 15px;
+}
+.footer_right {
+  width: 33%;
+  margin-top: 42px;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.29px;
+  text-align: center;
+  color: #999999;
+}
+.footer_right a {
+  text-decoration: none;
+  color: #999999;
+}
+.footer_right img {
+  margin-bottom: 2px;
+}
+/* --talk footer --*/
+.footer_talk {
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 72px;
+  max-width: 420px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 50;
+}
+.footer_talk_left,
+.footer_talk_right {
+  width: 50%;
+  height: 48px;
+  margin-top: 12px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+  -moz-border-radius: 8px; /*for Firefox*/
+  -webkit-border-radius: 8px; /*for Safari and chrome*/
+  border-radius: 8px;
+}
+.footer_talk_left {
+  margin-left: 10px;
+  margin-right: 20px;
+  background: #f0f0f0;
+  color: #666666;
+}
+.footer_talk_right {
+  margin-right: 10px;
+  background: #21335b;
+  color: #ffffff;
+}
+.footer_talk_left p,
+.footer_talk_right p {
+  margin-left: 8px;
+}
+.footer_talk_right a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.btn_bottom_comment {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+  align-items: center;
+}
+.btn_bottom_comment .btn {
+  width: 40%;
+  margin: 10px 5px 10px 10px;
+  line-height: 1.0;
+  background-color: #232941;
+  color: #ffffff;
+  font-size: 12px;
+  -moz-border-radius: 4px; /*for Firefox*/
+  -webkit-border-radius: 4px; /*for Safari and chrome*/
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 599px) {
+  .btn_bottom_comment .btn {
+    width: 33%;
+    height: 35px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .btn_bottom_comment .btn {
+    width: 30%;
+  }
+}
+.btn_bottom_comment .text_link a {
+  width: 30%;
+  color: #0273FF !important;
+  text-decoration: none;
+  font-size: 80%;
+  font-weight: bold;
+  margin: 0 10px;
+}
+.btn_bottom_movie a {
+  width: 80%;
+  margin: 10px auto;
+  line-height: 2.5;
+  background-color: #232941;
+  color: #ffffff;
+  font-size: 15px;
+  -moz-border-radius: 10px; /*for Firefox*/
+  -webkit-border-radius: 10px; /*for Safari and chrome*/
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn_bottom_movie img {
+	width: 26px;
+	align-items: center;
+	justify-content: center;
+	margin-right: 8px;
+}
+.btn_bottom_area a:first-child {
+  margin: 10px auto 0px auto;
+}
+.btn_bottom_area img {
+  width: 25px;
+  height: auto;
+  margin-right: 6px;
+}
+
+/*--------------------------------------------------------
+　　ペチャクチャfooter入力メニュー
+--------------------------------------------------------*/
+.btn_bottom_input {
+  width: 100%;
+}
+.btn_bottom_input li {
+  color: #333;
+  border-top: 2px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  font-size: 90%;
+}
+.btn_bottom_input li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 3% 8px 3%;
+  line-height: 3;
+  width: 94%;
+  align-items: center;
+  display: flex;
+}
+.btn_bottom_input li:first-child {
+  border-top: none;
+}
+.btn_bottom_input li img {
+  width: 25px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.btn_bottom_input_fixed {
+  width: 100%;
+  height: 30vh;
+  overflow-y: scroll;
+}
+.btn_bottom_input_fixed li {
+  color: #333;
+  border-top: 2px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  font-size: 90%;
+}
+.btn_bottom_input_fixed li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 20px 3% 20px 3%;
+  line-height: 1;
+  width: 94%;
+  align-items: center;
+  display: flex;
+}
+.btn_bottom_input_fixed li:first-child {
+  border-top: none;
+}
+.btn_bottom_input_fixed li img {
+  width: 25px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.toast_message div{
+    margin-top: 20vh;
+}
+
+.cp_iptxt {
+    position: relative;
+    width: 95%;
+    margin: 5px 3%;
+    display: inline-flex;
+}
+.cp_iptxt input[type=text] {
+    font: 15px/24px sans-serif;
+    box-sizing: border-box;
+    width: 77%;
+    margin: 5px 0;
+    padding: 0.3em;
+    transition: 0.3s;
+    border: 1px solid #1b2538;
+    border-radius: 4px;
+    outline: none;
+}
+.cp_iptxt input[type=text]:focus {
+    border-color: #da3c41;
+}
+.cp_iptxt input[type=text] {
+    padding-left: 20px;
+}
+.cp_iptxt i {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    padding: 9px 8px;
+    transition: 0.3s;
+    color: #aaaaaa;
+}
+.cp_iptxt input[type=text]:focus + i {
+    color: #da3c41;
+}
+
+.btn_word_set {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    margin-left: 10px;
+}
+
+.btn_word_set:hover {
+    background: #67c5ff;
+    color: white;
+}
+
+.btn-gradient-radius {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000000;
+    background-color: #c0c0c0;
+    transition: .4s;
+    font-size: 13px;
+}
+
+#twitter_area {
+    position:relative;
+    height: 155px;
+}
+
+.area_twitter {
+    font-size:13px;
+    width: 90%;
+    margin: 10px 5% 5px 5%;
+    border: 1px solid #67c5ff;
+}
+
+.twitter_message textarea:focus {
+    border: 1px solid #67c5ff;
+}
+
+.btn_twitter_send {
+    font-size:12px;
+    display: block;
+    position:absolute;
+    right:20px;
+    margin-bottom:10px;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    width: 105px;
+}
+
+.btn_twitter_send:hover {
+    background: #67c5ff;
+    color: white;
+}
+
+#word_set {
+  background-color: #ffffff;
+}
+
+#talk_image_list {
+  background-color: #ffffff;
+}
+
+#back {
+  background-color: #7191C0;
+}
+
+div.tap {
+  cursor: pointer;
+}
+
+.tips,
+.tips_right{
+  position: absolute;
+  display: inline-block;
+  padding: 10px 10px;
+  min-width: 162px;
+  max-width: 100%;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  background: #FFFF00;
+  top: 100px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-align: center;
+  z-index: 500;
+}
+
+.tips::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #FFFF00;
+}
+
+.tips_right::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #FFFF00;
+}
+
+.tips p,
+.tips_right p {
+  margin: 0;
+  padding: 0;
+}
+
+.recreate_talk_box {
+  display: flex;
+  align-items: center;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 280px;
+  height: 40px;
+  position: fixed;
+  background-color: #000000;
+  z-index: 100001;
+  border-radius: 10px;
+}
+.recreate_talk_box img {
+  position: absolute;
+  width: 32px;
+}
+.pecha {
+  margin-left: 5%;
+}
+.kucha {
+  margin-left: 17%;
+}
+.recreate_talk_box p {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.34px;
+  color: #ffffff;
+  margin-left: 32%;
+}
+.create_movie {
+  position: absolute;
+  z-index: 100002;
+  top: 0;
+  left: 0;
+}
+.create_movie img {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  width: 152px;
+  height: 152px;
+}
+.candidate,
+.speaker_filter,
+.resize_upload {
+  font-size: 15px;
+  font-weight: 600;
+  position: absolute;
+  top: 35%;
+  right: 4%;
+}
+.speaker_filter {
+  color: black;
+}
+.candidate_ng {
+  display: none;
+}
+.candidate_ok {
+  color: black;
+}
+.category_header {
+  width: 320px;
+  height: 40px;
+  position: relative;
+}
+.filter_cancel {
+  position: absolute;
+  top: 13px;
+  right: 9%;
+  font-size: 15px;
+  font-weight: 600;
+  color: #a7a7a7;
+}
+.category_area {
+  max-width: 320px;
+}
+.category_area ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.category_left,
+.category_right {
+  width: 40%;
+  list-style-type: none;
+  position: relative;
+  font-weight: bold;
+  padding: 0.5em 1.7em;
+  margin: 5px 0px;
+  color: #6091d3;
+  background: #FFF;
+  border: solid 3px #6091d3;
+  border-radius: 10px;
+  display: flex;
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+}
+.category_left {
+  margin-left: 8%;
+  margin-right: 2%;
+}
+.category_right {
+  margin-left: 2%;
+  margin-right: 8%;
+}
+.category_select {
+  color: #FFF;
+  background: #6091d3;
+}
+
+#upload-demo {
+  padding-top: 60px;
+}
+
+.template_area{
+  height: calc(100vh - 200px);
+}
